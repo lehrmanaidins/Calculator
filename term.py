@@ -10,3 +10,6 @@ class Term:
 
   def eval_at(x: float) -> float:
     return self.coefficeint * (x ** self.exponent)
+
+  def as_lambda(self) -> lambda:
+    return lambda x: self.eval_at(x)
