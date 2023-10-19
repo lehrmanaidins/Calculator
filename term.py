@@ -3,6 +3,8 @@
   @author Lehrman, Aidin
 """
 
+from __future__ import anotations
+
 class Term:
   def __init__(self, coefficient, exponent) -> None:
     self.coefficient: float = coefficient
@@ -13,3 +15,8 @@ class Term:
 
   def as_lambda(self) -> lambda:
     return lambda x: self.eval_at(x)
+
+  def __add__(a: Term: b: Term):
+    
+
+x: Term = Term(1, 1)
