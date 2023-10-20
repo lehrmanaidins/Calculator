@@ -9,6 +9,8 @@ class Polynomial:
     """ A Polynomial is a list of added together terms
         Format:
             (a * (x ** n)) + (b * (x ** (n-1))) + ... + (y * (x ** 1)) + (z * (x ** 0))
+            or
+            (term_a) + (term_b) + ... + (term_y) + (term_z)
 
         Values:
             Coeffiecients: 'a-z' are floats in range (-inf, inf)
