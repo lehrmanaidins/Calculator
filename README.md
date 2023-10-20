@@ -16,5 +16,5 @@ and n is the exponent.
 ```
 or
 ```python
-  term + term + ... + term + term
+  (term_a) + (term_b) + ... + (term_y) + (term_z)
 ```
