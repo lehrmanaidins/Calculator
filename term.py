@@ -47,25 +47,3 @@ class Term:
             A float that is the value of the Term after it is evaluated at 'x'
         """
         return self.coefficient * (x ** self.exponent)
-
-    #def __add__(self, other_term: Term) -> Polynomial:
-        """ Adds two Terms together
-
-        Args:
-            other_term (Term): Term to add to self
-
-        Returns:
-            A Polynomial with terms 'self' and 'other_term'
-        """
-        #return Polynomial(self, other_term)
-    
-    #def __sub__(self, other_term: Term) -> Polynomial:
-        """ Subtracts two Terms
-
-        Args:
-            other_term (Term): Term to subtract from self
-
-        Returns:
-            A Polynomial with terms 'self' and 'other_term'
-        """
-        #return Polynomial(self, other_term)
