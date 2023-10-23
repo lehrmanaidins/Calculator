@@ -13,14 +13,16 @@ class Polynomial:
             or
             (term_a) + (term_b) + ... + (term_y) + (term_z)
 
-        Values:
+        Attributes:
             Coeffiecients: 'a-z' are floats in range (-inf, inf)
             Exponents: 'n-0' are floats in range [0, inf)
-
-        Args:
-            *terms (list[Term] | None): All terms that will be added together to form the Polynomial
     """
     def __init__(self: Polynomial, *terms: list[Term | Polynomial] | None) -> None:
+        """ A list of Terms added together
+
+        Args:
+            *terms (list[Term | Polynomial] | None): All terms that will be added together to form the Polynomial
+        """
         if len(terms) == 0:
             self.terms: list[Term] = [Term(0, 0)]
         else:
@@ -32,18 +34,51 @@ class Polynomial:
                     self.terms.append(term)
 
     def __str__(self: Polynomial) -> str:
+        """ Converts Polynomial to a String
+
+        Args:
+            None
+
+        Returns:
+            Formated string of Polynomial
+        """
         string: str = str(self.terms[0])
         for i in range(1, len(self.terms)):
             string += f' + {self.terms[i]}'
         return string
 
     def __add__(self: Polynomial, term: Term | Polynomial) -> Polynomial:
+        """ Adds a Polynomial to another Polynomial/Term n=by initializing a new Polynomial
+            with both terms
+
+        Args:
+            term (Term | Polynomial): The Term or Polynomial to add
+
+        Retruns:
+            Polynomial of both terms 'self' and 'term'
+        """
         return Polynomial(self, term)
     
     def get_terms(self: Polynomial) -> list[Term]:
+        """ Returns the Polynomial's Terms as a list
+
+        Args:
+            None
+
+        Returns:
+            List of terms
+        """
         return self.terms
     
     def eval_at(self: Polynomial, x: float | int) -> float:
+        """ Evaluates the Polynomial at value 'x'
+
+        Args:
+            x (float): Value of 'x' to evaluate the Polynomial at
+
+        Returns:
+            Float with value of Polynomial evaluated at a value of 'x'
+        """
         sum: float = 0
         for term in self.terms:
             sum += term.eval_at(x)

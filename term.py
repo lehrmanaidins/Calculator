@@ -27,6 +27,14 @@ class Term:
         self.exponent: float = exponent
 
     def __str__(self: Term) -> str:
+        """ Converts Term to a String
+
+        Args:
+            None
+
+        Returns:
+            Formated string of Term
+        """
         return f'[{self.coefficient} * (x ** {self.exponent})]'
 
     def eval_at(self: Term, x: float | int) -> float:
