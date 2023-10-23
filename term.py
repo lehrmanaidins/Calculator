@@ -4,7 +4,7 @@
 """
 
 from __future__ import annotations
-from polynomial import Polynomial
+#from polynomial import Polynomial
 
 class Term:
     """ A Term is a ('coefficient' * ('x' ** 'exponent'))
@@ -14,7 +14,7 @@ class Term:
         exponent (float):  The expoenent in which 'x' is raised to when self.eval_at(x) is called
 	"""
 
-    def __init__(self, coefficient, exponent) -> None:
+    def __init__(self: Term, coefficient, exponent) -> None:
         """ Initializes a Term with values 'coefficient' and 'exponent'
 
         Args:
@@ -26,7 +26,10 @@ class Term:
         self.coefficient: float = coefficient
         self.exponent: float = exponent
 
-    def eval_at(self, x: float) -> float:
+    def __str__(self: Term) -> str:
+        return f'[{self.coefficient} * (x ** {self.exponent})]'
+
+    def eval_at(self: Term, x: float | int) -> float:
         """	Evaluates term at x-value 'x'
         
         Args:
@@ -37,7 +40,7 @@ class Term:
         """
         return self.coefficient * (x ** self.exponent)
 
-    def __add__(self, other_term: Term) -> Polynomial:
+    #def __add__(self, other_term: Term) -> Polynomial:
         """ Adds two Terms together
 
         Args:
@@ -46,9 +49,9 @@ class Term:
         Returns:
             A Polynomial with terms 'self' and 'other_term'
         """
-        return Polynomial(self, other_term)
+        #return Polynomial(self, other_term)
     
-    def __sub__(self, other_term: Term) -> Polynomial:
+    #def __sub__(self, other_term: Term) -> Polynomial:
         """ Subtracts two Terms
 
         Args:
@@ -57,3 +60,4 @@ class Term:
         Returns:
             A Polynomial with terms 'self' and 'other_term'
         """
+        #return Polynomial(self, other_term)
